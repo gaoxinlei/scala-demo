@@ -1,5 +1,7 @@
 package com.example.scala
 
+import scala.util.control.Breaks
+
 object HelloWorld {
 
   def main(args: Array[String]): Unit = {
@@ -32,5 +34,32 @@ object HelloWorld {
         "小于20"
       }
     println(ifEls2)
+
+    //while 表达式
+    val break = new Breaks
+
+    var flag1 = 1;
+    break.breakable({
+      while(flag1<10){
+        flag1+=1;
+        if(flag1%5==0){
+          break.break()
+        }
+      }
+    })
+    println(flag1)
+
+    //for 表达式 带保护式（相当于continue）
+    var flag2 = 1;
+    for(i<-1 to 3;j<-1 to 3 if j!=2){
+      if(i==j){
+        print(j)
+      }
+    }
+    println()
+    //用yield将遍历的结果赋出来。结果是一个Vector.
+    var yie = for(i<-1 to 5) yield i
+    println(yie)
   }
+
 }
