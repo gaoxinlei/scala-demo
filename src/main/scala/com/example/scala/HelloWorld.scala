@@ -4,6 +4,46 @@ import scala.util.control.Breaks
 
 object HelloWorld {
 
+  /**
+    * 求和函数。
+    * 函数的定义格式为：
+    * def 函数名(参数名: 参数类型): 返回值 = {方法体}
+    * 本例中的写法等同于声明了一个result接收了if else的答案并return，可省略。
+    * 无返回值，即显性或隐性返回值类型为Unit的函数，也称为过程。
+    * @param stepNumber
+    * @return
+    */
+  def getSumAll(stepNumber: Int): Int = {
+      if (stepNumber>0){
+        stepNumber*(stepNumber+1)/2
+      }else{
+        0
+      }
+  }
+
+  /**
+    * 变长参数。
+    * @param numbers
+    * @return
+    */
+  def sum(numbers: Int*): Int = {
+    if(null==numbers||numbers.isEmpty){
+      0
+    }else{
+      numbers.sum
+    }
+  }
+
+  /**
+    * 带有默认参数的函数。
+    * @param source
+    * @param factor
+    * @return
+    */
+  def multy2(source: Int,factor: Int=2): Int = {
+    source*factor
+  }
+
   def main(args: Array[String]): Unit = {
     println("Hello Scala!"(4))//等同于"Hello Scala".apply(4)
 
@@ -60,6 +100,11 @@ object HelloWorld {
     //用yield将遍历的结果赋出来。结果是一个Vector.
     var yie = for(i<-1 to 5) yield i
     println(yie)
+
+    var stepNumber = 100;
+    println(getSumAll(stepNumber))
+    println(sum(1,3,5,7))
+    println(multy2(2))
   }
 
 }
