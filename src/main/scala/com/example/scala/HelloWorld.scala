@@ -44,6 +44,10 @@ object HelloWorld {
     source*factor
   }
 
+  def initLazy() :String= {
+    "init执行了"
+  }
+
   def main(args: Array[String]): Unit = {
     println("Hello Scala!"(4))//等同于"Hello Scala".apply(4)
 
@@ -105,6 +109,10 @@ object HelloWorld {
     println(getSumAll(stepNumber))
     println(sum(1,3,5,7))
     println(multy2(2))
+    //懒执行验证。initLazy方法中的打印语句直到print laz时才输出，说明懒加载。
+    lazy val laz = initLazy()
+    println("init是否已执行？")
+    println(laz)
   }
 
 }
