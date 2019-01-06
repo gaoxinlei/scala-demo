@@ -2,6 +2,9 @@ package com.example.scala
 
 import scala.util.control.Breaks
 
+/**
+  * 演示helloworld基础语法。
+  */
 object HelloWorld {
 
   /**
