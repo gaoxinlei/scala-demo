@@ -18,5 +18,6 @@ object OuterInnerDemo3 {
     println(members.length)//2
     val desc = (for (m <- members) yield m.desc).mkString(", ")
     println(desc)//i1, i2
+    println(o1==o2);
   }
 }

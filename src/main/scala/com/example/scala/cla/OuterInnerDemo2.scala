@@ -12,6 +12,7 @@ object OuterInnerDemo2 {
     val i2 = o2.join("i2")
     val mems = o1.getMembers+=i2//用伴生对象的方式，member属于一个类。
     println(mems.length)//2
+    println(o1==o2)
   }
 
 }
