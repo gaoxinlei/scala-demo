@@ -17,7 +17,15 @@ object ApplyDemo {
   }
 
   object Man{
-    def apply(name: String, age: Int): Man = new Man(name, age)
+    private var man : Man = null
+
+    def apply(name: String, age: Int): Man = {
+      if(null==man){
+        man = new Man(name, age)
+      }
+
+      man
+    }
   }
 
   def main(args: Array[String]): Unit = {
