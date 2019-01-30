@@ -69,7 +69,8 @@ class Cat(val kind : String,val name : String) extends  Animal(name){
   //val只能重写val
   override val weight = 80//可不加override
   //var只能重写抽象的var
-  val color = "黄色"
+//  val color = "黄色"//用val会提示 需要将cat类置为abstract,因为animal中的color还未定义。但已经不会报编译错误，奇葩
+  var color = "黄色"//可以加一个override
   /**
     * 重写方法
     * def只能重写def
